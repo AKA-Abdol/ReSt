@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'api_basic',
+    'rest_framework',
     'realtors',
     'listings',
     'pages.apps.PagesConfig',
