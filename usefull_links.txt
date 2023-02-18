@@ -1,0 +1,3 @@
+GIT:gitignore.io
+API:httpbin.org
+API:api.stackexchange.com

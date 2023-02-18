@@ -1,14 +1,18 @@
 from rest_framework import serializers
-from .models import Article
+from .models import Product
 
-class ArticleSerializer(serializers.Serializer):
-    title = serializers.CharField(max_length=100)
-    author = serializers.CharField(max_length=100)
-    email = serializers.EmailField(max_length=100)
-    date = serializers.DateTimeField()
 
-    def create(self, validated_data):
-        return Article.objects.create(validated_data)
-
-    def update(self, instance, validated_data):
-        instance.title = validated_data
+class ProductSerializer(serializers.ModelSerializer):
+    disc = serializers.SerializerMethodField(read_only=True)
+    class Meta:
+        model = Product
+        fields = [
+            'title',
+            'content',
+            'price',
+            'sale_price',
+            'disc'
+        ]
+    
+    def get_disc(self, obj):
+        return float(obj.price) * 0.15
