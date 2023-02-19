@@ -33,11 +33,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'api_basic',
-    'rest_framework',
     'realtors',
-    'listings',
-    'pages',
+    'realty',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
